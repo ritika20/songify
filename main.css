@@ -21,7 +21,7 @@ h1 {
 .wrapper {
     height: 100%;
     width: 100%;
-    background-color: #BBB;
+    background: url(images/background.gif);
 }
 
 .welcome-screen {
@@ -32,6 +32,7 @@ h1 {
     justify-content: center;
     align-items: center;
 }
+
 
 .main {
     width: 100%;
@@ -51,12 +52,14 @@ h1 {
 
 .main .content {
     flex:1;
-    background-color: #1f1f1f;
+    background-color: rgba(0,0,0,0.7);
 }
 
 .main footer {
-    height: 80px;
+       height: 5em;
+    position: relative;
     background-color: #282828;
+    bottom: 10px;
     padding-top: 1rem;
 }
 
@@ -72,7 +75,11 @@ h1 {
 }
 
 .right.floated {
-    float: right;
+        float: right;
+    position: relative;
+    /* margin-bottom: 10px !important; */
+    font-weight: bold;
+    bottom: 20px;
 }
 
 .clickable {
@@ -133,7 +140,17 @@ h1 {
 .list-headers > div:last-child {
     text-align: right;
 }
+.song {
+    padding-top: 0.5rem;
+    min-height: 30px;
+    cursor: pointer;
+}
 
+.song > td{
+    width: 360px;
+    cursor: pointer;
+
+}
 .song-list .song {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
@@ -156,10 +173,10 @@ h1 {
     text-align: right;
 }
 
-.song-list .song:hover {
-    background-color: #282828;
+.song:hover {
+    background-color: rgba(0,0,0,0.2) !important;
 }
-
+   
 
 .song-length {
     text-align: right;
@@ -169,17 +186,20 @@ h1 {
     position: relative;
 }
 .current-song-wrapper {
-    position: absolute;
+   
+        position: absolute;
     bottom: 0;
     display: flex;
+    margin-bottom: 10px !important;
 }
 
 .current-song-image {
-    height: 100px;
+   height: 70px;
     width: 100px;
+    position: relative;
+    top: 5px;
     margin-right: 1rem;
 }
-
 .current-song-name {
     font-size: 1.4rem;
     margin-top: 4px;
@@ -198,11 +218,18 @@ table.dataTable tbody tr {
 
 #songs_filter {
     color: transparent;
+        position: relative;
+    top: 10px;
+    right: 10px;
+    border-radius: 20px;
 }
 #songs_filter input {
     width: 400px;
     margin-bottom: 1rem;
     font-size: 16px;
+     border-radius: 7px;
+    outline: none;
+
 }
 .player-buttons .fa {
     margin-right: 2rem;
@@ -213,4 +240,149 @@ table.dataTable tbody tr {
 }
 label{
   color: white;
+}
+svg{
+  position: absolute;
+  display: none;
+  top:200px;
+  left: 100px;
+}
+ol{
+    position: absolute;
+   top: 391px;
+   left: 58%;
+   font-size: 13px;
+   border: 1px solid;
+   display:none;
+}
+#mood-list{
+    width: 700px;
+    height:324px;
+    margin:2rem auto;
+    margin-top: 40px;
+}
+#mood-list li{
+    display: inline-block;
+    padding:3px;
+}
+.back{
+    cursor: pointer;
+    font-size: 20px;
+}
+.mood{
+    opacity:.8;
+    cursor: pointer;
+    width: 150px;
+    height:150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    border:1px solid white;
+}
+.mood span{
+         background: rgba(0, 0, 0, 0.52);
+    width: 100%;
+    color: white;
+    /* padding: 10px; */
+    text-align: center;
+    margin: 0px auto;
+    font-weight: bold;
+    font-size: 1.2rem;
+
+}
+.heading{
+
+    text-align: center;
+    position: relative;
+    top:1em;
+    color:white;
+}
+.song-heading{
+     text-align: center;
+    position: relative;
+    top:1em;
+    font-size: 20px;
+}
+.mood:hover{
+    opacity: 1;
+}
+.mood1{
+    background-image: url(images/joy.png);
+    background-position: center;
+    background-size: cover;
+}
+.mood2{
+    background-image: url(images/song4.jpg);
+    background-position: center;
+}
+.mood3{
+    background-image: url(images/romantic.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.mood4{
+    background-image: url(images/roadtrip.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.mood5{
+    background-image: url(images/pop.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.mood6{
+    background-image: url(images/jazz.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.mood7{
+    background-image: url(images/retro.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.mood8{
+    background-image: url(images/edm.jpg);
+    background-position: center;
+    background-size: cover;
+}
+/*Additional classes jo js se add krte h*/
+.main1{
+background-image: url(images/loop.gif);
+background-position: center;
+background-size: cover;
+}.main2{
+background-image: url(images/staystrong.jpg);
+background-position: center;
+background-size: cover;
+font-family: 'Boogaloo', cursive;
+}.main3{
+background-image: url(images/romantic1.gif);
+background-position: center;
+background-size: cover;
+font-family: 'Courgette', cursive;
+font-weight: normal;
+}.main4{
+background-image: url(images/roadtrip1.jpg);
+background-position: center;
+background-size: cover;
+font-family: 'Fresca', sans-serif;
+}
+.main5{
+background-image: url(images/pop1.jpg);
+background-position: center;
+background-size: cover;
+}.main6{
+background-image: url(images/jazz.jpg);
+background-position: center;
+background-size: cover;
+}.main7{
+background-image: url(images/retro.jpg);
+background-position: center;
+background-size: cover;
+font-family: 'Aldrich', sans-serif;
+}.main8{
+background-image: url(images/edm2.jpg);
+background-position: center;
+background-size: cover;
 }

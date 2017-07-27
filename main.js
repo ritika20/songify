@@ -38,6 +38,7 @@
          var currentSongNumber = 0;
 var willLoop = 0;
 var willShuffle = 0;
+var equal = 0;
          var songs = [
             {
           'id':'0',
@@ -136,9 +137,14 @@ function updateCurrentTime() {                  ///function to update current ti
  duration = fancyTimeFormat(duration);
  $('.time-elapsed').text(currentTime);
  $('.song-duration').text(duration);
-}
-$(document).ready(function(){
-    // Do Something
+} function updateTimer(){
+    var song = document.querySelector('audio');
+    var ct =song.currentTime;
+    var td =song.duration;
+    var percentage = (ct/td)*100;
+    $(".progress-filled").css('width',percentage+"%");
+    }
+ function songslistdisplay(){
   changeCurrentSongDetails(songs[0]); /* use to display the image initially*/
   for(var i =0; i < songs.length;i++) {
         var obj = songs[i];
@@ -151,13 +157,326 @@ $(document).ready(function(){
         song.find('.song-length').text(obj.duration);
         addSongNameClickEvent(obj,i+1);
       }
-
-updateCurrentTime();
+      updateCurrentTime();
 $('#songs').DataTable({
   paging:false
 });
+updateTimer();
+}
+$('.mood1').on('click',function(){
+    $('.heading').addClass('hidden');
+       $(".song-heading").html("Happy Songs");
+      $('#mood-list').addClass('hidden');
+      $('#heading').addClass('hidden');
+      $('.main').removeClass('hidden');
+      $('.main').addClass('mood1');
+  songs = songs1 = [{
+                'name': 'Buddhu Sa Mann Hai',
+                'artist': 'Amaal Malik, Armaan Malik',
+                'album': 'Kapoor & Sons',
+                'duration': '3:26',
+               'fileName': 'song1.mp3',
+               'image' : 'song1.jpg'
+            },
+            {
+                'name': 'Jaaniya O Jaaniya',
+                'artist': 'Sidharth Basrur',
+                'album': 'Haunted',
+                'duration': '5:07',
+                'fileName': 'song2.mp3',
+                'image' : 'song2.jpg'
+            },
+            {
+                'name': 'Safarnama',
+                'artist': 'Lucky Ali',
+                'album': 'Tamasha',
+                'duration': '4:11',
+                'fileName': 'song3.mp3',
+                'image' : 'song3.jpg'
+            },
+            {
+                'name': 'Why Not Me',
+                'artist': 'Enrique Iglesias',
+                'album': 'Euphoria',
+                'duration': '3:38',
+                'fileName': 'song4.mp3',
+                'image' : 'song4.jpg'
+            }];
+  songslistdisplay();
+});
+
+$('.mood2').on('click',function(){
+    $('.heading').addClass('hidden');
+  $(".song-heading").html("Sad Songs");
+      $('#mood-list').addClass('hidden');
+      $('.main').removeClass('hidden');
+      $('.main').addClass('mood2');
+  songs = songs2 =[{  
+                        'name': 'Channa Mereya',
+                       'artist': 'Arijit Singh',
+                       'album': 'Ae Dil Hai Mushkil',
+                       'duration': '4:49',
+                       'fileName': 'song5.mp3',
+                       'image' : 'song5.jpg'
+                },
+                {    'name': 'Phir Bhi Tumko Chahunga',
+                     'artist': 'Arijit Singh',
+                     'album': 'Half Girlfriend',
+                     'duration': '5:51',
+                     'fileName': 'song6.mp3',
+                     'image' : 'song6.jpg'
+                },
+                    {'name': 'Dhuaan Dhuaan',
+                'artist': 'Arijit Singh',
+                'album': 'Fugly',
+                'duration': '3:40',
+                'fileName': 'song7.mp3',
+                'image' : 'song7.jpg'
+            },
+            {
+                'name': 'Why Not Me',
+                'artist': 'Enrique Iglesias',
+                'album': 'Euphoria',
+                'duration': '3:38',
+                'fileName': 'song4.mp3',
+                'image' : 'song4.jpg'
+            }];
+  songslistdisplay();
+});
+$('.mood3').on('click',function(){
+    $('.heading').addClass('hidden');
+      $(".song-heading").html("Romantic Songs");
+      $(".song-heading").html("Romantic Songs");
+      $('#mood-list').addClass('hidden');
+      $('.main').removeClass('hidden');
+      $('.main').addClass('mood3');
+   songs = songs3 =[{  'name': 'Darkhaast',
+                       'artist': 'Arijit Singh,Sunidhi Chouhan',
+                       'album': 'Shivaay',
+                       'duration': '6:14',
+                       'fileName': 'song9.mp3',
+                       'image' : 'song9.jpg'
+                },
+                {    'name': 'Mera Pehla Pehle Pyaar',
+                     'artist': '--',
+                     'album': 'Mera Pehla Pehle Pyaar',
+                     'duration': '4:31',
+                     'fileName': 'song10.mp3',
+                     'image' : 'song10.jpg'
+                },
+                    {'name': 'Aye Dil Bata',
+                'artist': 'Arijit Singh',
+                'album': 'Ishq Actually',
+                'duration': '5:42',
+                'fileName': 'song11.mp3',
+                'image' : 'song11.jpg'
+            },
+            {
+                'name': 'Jaaniya O Jaaniya',
+                'artist': 'Sidharth Basrur',
+                'album': 'Haunted',
+                'duration': '5:07',
+                'fileName': 'song2.mp3',
+                'image' : 'song2.jpg'
+            }];  
+  songslistdisplay();
+});
+$('.mood4').on('click',function(){
+    $('.heading').addClass('hidden');
+
+      $(".song-heading").html("RoadTrip Songs");
+      $('#mood-list').addClass('hidden');
+      $('.main').removeClass('hidden');
+      $('.main').addClass('mood4');
+        songs = songs4 =[{
+                'name': 'Safarnama',
+                'artist': 'Lucky Ali',
+                'album': 'Tamasha',
+                'duration': '4:11',
+                'fileName': 'song3.mp3',
+                'image' : 'song3.jpg'
+            },
+                {  'name': 'Darkhaast',
+                       'artist': 'Arijit Singh,Sunidhi Chouhan',
+                       'album': 'Shivaay',
+                       'duration': '6:14',
+                       'fileName': 'song9.mp3',
+                       'image' : 'song9.jpg'
+                },
+                    {'name': 'Aye Dil Bata',
+                'artist': 'Arijit Singh',
+                'album': 'Ishq Actually',
+                'duration': '5:42',
+                'fileName': 'song11.mp3',
+                'image' : 'song11.jpg'
+            },
+            {
+                'name': 'Why Not Me',
+                'artist': 'Enrique Iglesias',
+                'album': 'Euphoria',
+                'duration': '3:38',
+                'fileName': 'song4.mp3',
+                'image' : 'song4.jpg'
+            }]  
+  songslistdisplay();
 
 });
+$('.mood5').on('click',function(){
+    $('.heading').addClass('hidden');
+
+  $(".song-heading").html(" Pop Songs");
+      $('#mood-list').addClass('hidden');
+      $('.main').removeClass('hidden');
+      $('.main').addClass('mood5');
+     songs = songs5 =[{  'name': 'Russian Roulette',
+                       'artist': 'Rihanna',
+                       'album': 'Loud',
+                       'duration': '3:47',
+                       'fileName': 'song17.mp3',
+                       'image' : 'song17.jpg'
+                },
+                {    'name': 'Rockabye Baby',
+                     'artist': 'Clean Bandit',
+                     'album': 'Rockabye',
+                     'duration': '4:13',
+                     'fileName': 'song18.mp3',
+                     'image' : 'song18.jpg'
+                },
+                {'name': 'Despacito (TEGOS.RU)',
+                'artist': 'Louis Fonsi, Daddy Yankee',
+                'album': 'TEGOS.RU',
+                'duration': '3:47',
+                'fileName': 'song20.mp3',
+                'image' : 'song20.jpeg'    
+            },
+            {    'name': 'Rockabye Baby',
+                     'artist': 'Clean Bandit',
+                     'album': 'Rockabye',
+                     'duration': '4:13',
+                     'fileName': 'song18.mp3',
+                     'image' : 'song18.jpg'
+                }] ;
+  songslistdisplay();
+});
+$('.mood6').on('click',function(){
+    $('.heading').addClass('hidden');
+
+  $(".song-heading").html("Casual Songs");
+      $('#mood-list').addClass('hidden');
+      $('.main').removeClass('hidden');
+      $('.main').addClass('mood6');
+   songs = songs6 =[{
+                'name': 'Safarnama',
+                'artist': 'Lucky Ali',
+                'album': 'Tamasha',
+                'duration': '4:11',
+                'fileName': 'song3.mp3',
+                'image' : 'song3.jpg'
+            },
+                {
+                'name': 'Why Not Me',
+                'artist': 'Enrique Iglesias',
+                'album': 'Euphoria',
+                'duration': '3:38',
+                'fileName': 'song4.mp3',
+                'image' : 'song4.jpg'
+            },
+                    {'name': 'Aye Dil Bata',
+                'artist': 'Arijit Singh',
+                'album': 'Ishq Actually',
+                'duration': '5:42',
+                'fileName': 'song11.mp3',
+                'image' : 'song11.jpg'
+            },
+            {
+                'name': 'Why Not Me',
+                'artist': 'Enrique Iglesias',
+                'album': 'Euphoria',
+                'duration': '3:38',
+                'fileName': 'song4.mp3',
+                'image' : 'song4.jpg'
+            }];
+  songslistdisplay();
+});
+$('.mood7').on('click',function(){
+    $('.heading').addClass('hidden');
+  $(".song-heading").html("Retro World Songs");
+      $('#mood-list').addClass('hidden');
+      $('.main').removeClass('hidden');
+      $('.main').addClass('mood7');
+ songs = songs7 =[{  'name': 'Mera Dil Bhi Kitna Pagal Hai',
+                       'artist': 'Kumar Sanu,Alka Yagnik',
+                       'album': 'Saajan',
+                       'duration': '5:26',
+                       'fileName': 'song25.mp3',
+                       'image' : 'song25.jpg'
+                },
+                {    'name': 'Mera Pehla Pehle Pyaar',
+                     'artist': '--',
+                     'album': 'Mera Pehla Pehle Pyaar',
+                     'duration': '4:31',
+                     'fileName': 'song10.mp3',
+                     'image' : 'song10.jpg'
+                },
+                    {  'name': 'Mera Dil Bhi Kitna Pagal Hai',
+                       'artist': 'Kumar Sanu,Alka Yagnik',
+                       'album': 'Saajan',
+                       'duration': '5:26',
+                       'fileName': 'song25.mp3',
+                       'image' : 'song25.jpg'
+                },
+            {    'name': 'Mera Pehla Pehle Pyaar',
+                     'artist': '--',
+                     'album': 'Mera Pehla Pehle Pyaar',
+                     'duration': '4:31',
+                     'fileName': 'song10.mp3',
+                     'image' : 'song10.jpg'
+                }] ;
+  songslistdisplay();
+});
+$('.mood8').on('click',function(){
+  $('.heading').addClass('hidden');
+  $(".song-heading").html("EDM Songs");
+      $('#mood-list').addClass('hidden');
+      $('.main').removeClass('hidden');
+      $('.main').addClass('mood1');
+ songs = songs8 =[{  'name': 'Titanium feat. Sia',
+                       'artist': 'David Guetta, Sia',
+                       'album': 'Nothing But the Beat',
+                       'duration': '4:05',
+                       'fileName': 'song29.mp3',
+                       'image' : 'song29.jpg'
+                },
+                {    'name': 'Get Low',
+                     'artist': 'Dillon Francis, DJ Snake',
+                     'album': 'Get Low',
+                     'duration': '3:34',
+                     'fileName': 'song30.mp3',
+                     'image' : 'song30.jpg'
+                },
+                   {  'name': 'Titanium feat. Sia',
+                       'artist': 'David Guetta, Sia',
+                       'album': 'Nothing But the Beat',
+                       'duration': '4:05',
+                       'fileName': 'song29.mp3',
+                       'image' : 'song29.jpg'
+                },
+                {    'name': 'Get Low',
+                     'artist': 'Dillon Francis, DJ Snake',
+                     'album': 'Get Low',
+                     'duration': '3:34',
+                     'fileName': 'song30.mp3',
+                     'image' : 'song30.jpg'
+                }]    ;
+  songslistdisplay();
+});
+
+
+/*$(document).ready(function(){
+    // Do Something
+   
+
+});*/
 setInterval(function() {
 updateCurrentTime();
 },1000);
@@ -174,7 +493,12 @@ $('.fa-random').on('click',function() {
     $('.fa-random').toggleClass('disabled');
     willShuffle = 1 - willShuffle;
 });
+$('.back').on('click',function() {
+  $('.main').addClass('hidden');
+  $('.mood-list').removeClass('hidden');
 
+
+  });
 $('.fa-step-backward').on('click',function() {
 
   var audio = document.querySelector('audio');
@@ -360,3 +684,59 @@ function timeJump() {
     var song = document.querySelector('audio')
     song.currentTime = song.duration - 5;
 }
+$(".fa-bar-chart").click(function(){
+
+$(this).toggleClass("active");
+if(equal==0)
+{
+
+equal=1;
+
+$("svg").css("display","inline-block");
+$(".content").css("display","none");
+$(".contain").css("display","inline-block");
+$(".contain").css("background","black");
+}
+else{
+equal=0;
+$("svg").css("display","none");
+$(".content").css("display","inline-block");
+$(".contain").css("display","none");
+}
+
+});
+$(".fa-microphone").hover(function(){
+
+$("ol").css("display","inline-block")
+
+
+});
+
+$(".fa-microphone").mouseout(function(){
+
+$("ol").css("display","none")
+
+
+});
+
+
+
+    $(".player-progress").click(function(event) {
+        var $this = $(this);
+
+        // to get part of width of progress bar clicked
+        var widthclicked = event.pageX - $this.offset().left;
+        var totalWidth = $this.width(); // can also be cached somewhere in the app if it doesn't change
+
+        // do calculation of the seconds clicked
+        var calc = (widthclicked / totalWidth) * 100 ; // get the percent of bar clicked and multiply in by the duration
+
+
+    var song = document.querySelector('audio');
+    song.currentTime = (song.duration*calc)/100;
+
+    updateTimer();
+
+
+
+    });

@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+  <!DOCTYPE html>
+<html lang="en-US">
 
 <head>
     <meta charset="UTF-8">
@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class="wrapper">
+    <div class=" wrapper">
         <section class="welcome-screen hidden">
             <h1> Welcome to Songify </h1>
             <h3> Enter name to access your account </h3>
@@ -19,12 +19,35 @@
                 <button> Go </button>
             </div>
         </section>
-        <div class="main">
+        <h1 class="heading">Moods</h1>
+         <div id="mood-list" class="mood-list">
+                    <ul class="img-list">
+                        
+                        <li><div class="mood mood1"><span>Happy</span></div></li>
+
+                        <li><div class="mood mood2"><span>Heart Broke</span></div></li>
+
+                        <li><div class="mood mood3"><span>Romantic</span></div></li>
+
+                        <li><div class="mood mood4"><span>RoadTrip Mix</span></div></li>
+
+                        <li><div class="mood mood5"><span>Pop</span></div></li>
+
+                        <li><div class="mood mood6"><span>Casual</span></div></li>
+
+                        <li><div class="mood mood7"><span>Retro World</span></div></li>
+
+                        <li><div class="mood mood8"><span>EDM</span></div></li>
+                    </ul>
+                </div>
+        <div class="main hidden">
             <header>
+                <div class="song-heading"></div>
+                <div class="left floated back">Back</div>
                 <div class="right floated user-name">MUSIC LIBRARY </div>
             </header>
             <section class="content">
-                <audio src="song1.mp3"></audio>
+                <audio id="Audio" src="song1.mp3"></audio>
                 <table id="songs">
         <thead class="list-headers">
                 <tr><td> Title </td>
@@ -62,15 +85,26 @@
       </table>
 
             </section>
-            <div class="current-song-wrapper">
+            
+        <div class="contain hiddden"></div>
+           <ol>
+                           <p>Commands</p>
+                           <li>Play the song </li>
+                           <li>loop through songs</li>
+                           <li>next song </li>
+                           <li>show visualizer</li>
+                           <li>Pause the Song</li>
+                           <li>shuffle between songs</li>
+                           <li>previous song</li>
+                       </ol>
+            <footer>
+              <div class="current-song-wrapper">
         <img  class="current-song-image">
         <div>
         <p class="current-song-name"></p>
         <p class="current-song-album"></p>
-       	</div>
         </div>
-
-            <footer>
+        </div>
                 <div class="controls">
                   <div class="player-buttons">
       <i class="fa fa-random clickable disabled" aria-hidden="true"></i>
@@ -78,6 +112,9 @@
       <i class="fa fa-play clickable play-icon" aria-hidden="true"></i>
       <i class="fa fa-step-forward clickable" aria-hidden="true"></i>
       <i class="fa fa-repeat disabled clickable" aria-hidden="true"></i>
+	  <i class="fa fa-bar-chart active clickable" aria-hidden="true"></i>
+      <i class="fa fa-microphone clickable active" aria-hidden="true"></i>
+
     </div>
                     <div class="progress-wrapper">
                         <span class="time-elapsed"> </span>
@@ -90,10 +127,14 @@
             </footer>
         </div>
     </div>
-    <script src="jquery.js">
-    </script>
+    <script src="jquery.js"></script>
   <script src="main.js"></script>
-  <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js">
+   <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+   <script src="app.js"></script>
+   <script type="text/javascript" src="voice.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.10.0/d3.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js">
 </script>
 </body>
 
